@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BillBuddy</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>BillBuddy</h1>
+</header>
+
+<main id="content">
+    <img src="logo.png" alt="BillBuddy Logo" class="app-icon"></img>
+
+    <!-- Content will be inserted here by JavaScript -->
+    <div id="text-content"></div>
+
+    <div class="button-container">
+        <a href="#" class="button">App Store</a>
+        <a href="privacy.html" class="button">Privacy Policy</a>
+    </div>
+</main>
+
+<footer>
+    &copy; 2025 BillBuddy. All rights reserved.
+</footer>
+
+<script>
+    const germanText = `
+        <h2>Machen Sie Schluss mit komplizierten Berechnungen am Tisch!</h2>
+        <p>Diese App ist der perfekte Begleiter in jeder Situation, in der Rechnungen geteilt werden sollen, z. B.:</p>
+        <ul>
+            <li><strong>Restaurantbesuche mit Freunden:</strong> Einfaches Aufteilen der Rechnung und Berechnung des Trinkgelds</li>
+            <li><strong>Geschäftsessen:</strong> Berechnung von Trinkgeldern und Kostenaufteilung bei Teamessen oder Geschäftsreisen.</li>
+            <li><strong>Geburtstagsfeiern:</strong> Gerechte Verteilung der Kosten für Essen, Getränke oder Geschenke unter allen Teilnehmern.</li>
+            <li><strong>WG-Alltag:</strong> Gerechte Aufteilung gemeinsamer Ausgaben wie Lieferessen oder Einkäufe.</li>
+            <li><strong>Familienausflüge:</strong> Klare Aufteilung von Kosten bei gemeinsamen Aktivitäten wie Zoobesuchen oder Freizeitparks.</li>
+            <li><strong>Partys und Feiern:</strong> Aufteilen der Kosten für Catering, Getränke oder andere gemeinsame Ausgaben.</li>
+            <li><strong>Gemeinsame Taxifahrten:</strong> Schnelle Berechnung und Aufteilung der Fahrtkosten inklusive Trinkgeld.</li>
+        </ul>
+        <p>Mit nur wenigen Eingaben erledigen Sie alles im Handumdrehen.</p>
+
+        <h3>Funktionen:</h3>
+        <ul>
+            <li><strong>Rechnungsbetrag eingeben:</strong> Geben Sie den Gesamtbetrag Ihrer Rechnung ein.</li>
+            <li><strong>Anzahl der Personen festlegen:</strong> Erfassen Sie intuitiv, schnell und einfach die Personenanzahl.</li>
+            <li><strong>Trinkgeld auswählen:</strong> Wählen Sie den gewünschten Prozentsatz für das Trinkgeld.</li>
+            <li><strong>Gesamtbetrag berechnen:</strong> Sehen Sie sofort den Rechnungsbetrag inklusive Trinkgeld.</li>
+            <li><strong>Auf- oder Abrunden:</strong> Runden Sie den Betrag per Fingertipp auf oder ab, um es einfacher zu machen.</li>
+            <li><strong>Betrag pro Person berechnen:</strong> Erhalten Sie den genauen Betrag, den jede Person zahlen muss.</li>
+            <li><strong>Teilen Sie die Details:</strong> Senden Sie die berechneten Beträge direkt an alle Beteiligten – schnell und unkompliziert.</li>
+        </ul>
+
+        <h3>Warum diese App?</h3>
+        <ul>
+            <li><strong>Einfachheit:</strong> Kein Schnickschnack, keine Werbung, keine unnötigen Funktionen.</li>
+            <li><strong>Benutzerfreundlich:</strong> Intuitive Bedienung für schnelle Ergebnisse.</li>
+            <li><strong>Zeitersparnis:</strong> Kein Taschenrechner oder Kopfzerbrechen mehr nötig.</li>
+            <li><strong>Praktisch:</strong> Perfekt für kleine und große Gruppen.</li>
+        </ul>
+    `;
+
+    const englishText = `
+        <h2>Put an end to complicated calculations at the table!</h2>
+        <p>This app is the perfect companion in any situation where bills need to be split, e.g:</p>
+        <ul>
+            <li><strong>Restaurant visits with friends:</strong> Easily split the bill and calculate the tip</li>
+            <li><strong>Business meals:</strong> Calculating tips and splitting costs for team meals or business trips.</li>
+            <li><strong>Birthday parties:</strong> Fair distribution of costs for food, drinks or gifts among all participants.</li>
+            <li><strong>Everyday life in the shared flat:</strong> Fair distribution of common expenses such as meals out or shopping.</li>
+            <li><strong>Family outings:</strong> Clear sharing of costs for joint activities such as visits to the zoo or amusement parks.</li>
+            <li><strong>Parties and celebrations:</strong> Sharing the cost of catering, drinks or other joint expenses.</li>
+            <li><strong>Shared cab rides:</strong> Quick calculation and splitting of travel costs including tips.</li>
+        </ul>
+        <p>With just a few entries, you can do everything in no time at all.</p>
+
+        <h3>Functions:</h3>
+        <ul>
+            <li><strong>Enter invoice amount:</strong> Enter the total amount of your invoice.</li>
+            <li><strong>Specify number of people:</strong> Enter the number of people intuitively, quickly and easily.</li>
+            <li><strong>Select tip:</strong> Select the desired percentage for the tip.</li>
+            <li><strong>Calculate total amount:</strong> See the invoice amount including tip immediately.</li>
+            <li><strong>Round up or down:</strong> Round the amount up or down with just a tap to make it easier.</li>
+            <li><strong>Calculate amount per person:</strong> Get the exact amount each person needs to pay.</li>
+            <li><strong>Share the details:</strong> Send the calculated amounts directly to everyone involved - quickly and easily.</li>
+        </ul>
+
+        <h3>Why this app?</h3>
+        <ul>
+            <li><strong>Simplicity:</strong> No frills, no ads, no unnecessary features.</li>
+            <li><strong>User-friendly:</strong> Intuitive operation for fast results.</li>
+            <li><strong>Time saving:</strong> No more calculators or headaches.</li>
+            <li><strong>Practical:</strong> Perfect for small and large groups.</li>
+        </ul>
+    `;
+
+    const userLang = navigator.language || navigator.userLanguage;
+    const textContentElement = document.getElementById('text-content');
+
+    if (userLang.startsWith('de')) {
+        textContentElement.innerHTML = germanText;
+    } else {
+        textContentElement.innerHTML = englishText;
+    }
+</script>
+
+</body>
+</html>
